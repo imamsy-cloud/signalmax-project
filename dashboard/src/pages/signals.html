@@ -1,0 +1,27 @@
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="lg:col-span-1 bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+        <h3 class="font-semibold mb-4">Buat Sinyal Baru</h3>
+        <form class="space-y-4">
+            <div><label class="text-sm font-medium">Pair</label><input type="text" placeholder="e.g., BTC/USDT" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></div>
+            <div><label class="text-sm font-medium">Rekomendasi</label><select class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"><option>BUY</option><option>SELL</option></select></div>
+            <div><label class="text-sm font-medium">Entri</label><input type="number" step="any" placeholder="Harga masuk posisi" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></div>
+            <div><label class="text-sm font-medium">Stop Loss (SL)</label><input type="number" step="any" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></div>
+            <div><label class="text-sm font-medium">Take Profit (TP)</label><div class="mt-1 space-y-2"><input type="number" step="any" placeholder="TP 1" class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"><input type="number" step="any" placeholder="TP 2 (Opsional)" class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"><input type="number" step="any" placeholder="TP 3 (Opsional)" class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></div></div>
+            <div class="flex items-center"><input type="checkbox" id="isPremiumSignal" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"><label for="isPremiumSignal" class="ml-2 block text-sm">Sinyal Premium</label></div>
+            <button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 font-semibold">Kirim Sinyal</button>
+        </form>
+    </div>
+    <div class="lg:col-span-2 bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+        <h3 class="font-semibold mb-4">Daftar Sinyal Terkirim</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+                <thead class="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 uppercase"><tr><th class="p-3">Pair</th><th class="p-3">Rekomendasi</th><th class="p-3">Entri</th><th class="p-3">Status</th><th class="p-3">Aksi</th></tr></thead>
+                <tbody>
+                    <tr class="border-b dark:border-gray-700"><td class="p-3 font-medium">BTC/USDT</td><td class="p-3"><span class="font-semibold text-green-500">BUY</span></td><td class="p-3">68,500</td><td class="p-3"><span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">Running</span></td><td class="p-3 space-x-2"><button class="text-blue-500 hover:text-blue-700" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500 hover:text-red-700" title="Hapus"><i class="fas fa-trash"></i></button></td></tr>
+                    <tr class="border-b dark:border-gray-700"><td class="p-3 font-medium">ETH/USDT</td><td class="p-3"><span class="font-semibold text-red-500">SELL</span></td><td class="p-3">3,600</td><td class="p-3"><span class="px-2 py-1 text-xs font-semibold rounded-full bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-200">Closed</span></td><td class="p-3 space-x-2"><button class="text-blue-500 hover:text-blue-700" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500 hover:text-red-700" title="Hapus"><i class="fas fa-trash"></i></button></td></tr>
+                    <tr class="border-b dark:border-gray-700"><td class="p-3 font-medium">XRP/USDT</td><td class="p-3"><span class="font-semibold text-green-500">BUY</span></td><td class="p-3">0.521</td><td class="p-3"><span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Hit TP1</span></td><td class="p-3 space-x-2"><button class="text-blue-500 hover:text-blue-700" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500 hover:text-red-700" title="Hapus"><i class="fas fa-trash"></i></button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Sinyal Trading</h1>
+    <div class="bg-gray-200 dark:bg-gray-800 h-56 rounded-lg flex items-center justify-center"><p class="text-gray-500">Embedded TradingView Chart</p></div>
+    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+        <h3 class="font-semibold text-center text-gray-700 dark:text-gray-200 mb-3">Total Winrate</h3>
+        <div class="flex justify-center items-center">
+            <div class="relative w-32 h-32">
+                <svg class="w-full h-full" viewBox="0 0 100 100"><circle class="text-gray-200 dark:text-gray-700" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/><circle id="winrate-circle" class="text-primary-500 radial-chart-progress" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/></svg>
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center"><span id="winrate-text" class="text-2xl font-bold text-gray-800 dark:text-white">0%</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="flex bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+        <button id="tab-berjalan" class="signal-tab w-1/2 p-2 rounded-full text-sm font-medium transition active">Berjalan</button>
+        <button id="tab-riwayat" class="signal-tab w-1/2 p-2 rounded-full text-sm font-medium transition">Riwayat</button>
+    </div>
+    <div id="list-berjalan" class="space-y-3">
+        <div class="signal-card bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+            <div class="flex justify-between items-start mb-3"><div><span class="font-bold text-lg text-gray-800 dark:text-white">BTC/USDT</span><span class="ml-2 text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded-full">BUY</span></div><span class="text-xs text-gray-500 dark:text-gray-400">1 jam lalu</span></div>
+            <div class="grid grid-cols-2 gap-3 text-sm mb-3">
+                <div class="bg-gray-50 dark:bg-gray-700/50 p-2 rounded text-center"><p class="text-gray-500 dark:text-gray-400 font-medium">Entri</p><p class="font-semibold text-gray-700 dark:text-gray-200">68,500</p></div>
+                <div class="bg-red-50 dark:bg-red-900/50 p-2 rounded text-center"><p class="text-red-600 dark:text-red-400 font-medium">Stop Loss</p><p class="font-semibold text-gray-700 dark:text-gray-200">67,800</p></div>
+            </div>
+            <button class="tp-toggle-button w-full text-sm font-semibold text-primary-600 dark:text-primary-400 p-2 bg-primary-50 dark:bg-primary-900/50 rounded-md">Lihat Target <i class="fas fa-chevron-down ml-1 transition-transform"></i></button>
+            <div class="tp-dropdown mt-2 space-y-2 text-sm">
+                <div class="flex justify-between p-2 bg-gray-50 dark:bg-gray-700/50 rounded"><span>Take Profit 1</span><span class="font-semibold">69,500</span></div>
+                <div class="flex justify-between p-2 bg-gray-50 dark:bg-gray-700/50 rounded"><span>Take Profit 2</span><span class="font-semibold">70,000</span></div>
+                <div class="flex justify-between p-2 bg-gray-50 dark:bg-gray-700/50 rounded"><span>Take Profit 3</span><span class="font-semibold">71,200</span></div>
+            </div>
+        </div>
+    </div>
+    <div id="list-riwayat" class="space-y-3 hidden">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md opacity-80"><div class="flex justify-between items-start mb-3"><span class="font-bold text-lg text-gray-800 dark:text-white">SOL/USDT</span><span class="text-xs font-semibold bg-primary-500 text-white px-3 py-1 rounded-full">TP2 Hit</span></div><div class="grid grid-cols-2 gap-3 text-sm"><div><p class="text-gray-500 dark:text-gray-400">Entri</p><p class="font-semibold text-gray-700 dark:text-gray-200">165.20</p></div><div class="text-right"><p class="text-gray-500 dark:text-gray-400">Close</p><p class="font-semibold text-primary-500">175.00 (+5.93%)</p></div></div></div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md opacity-80"><div class="flex justify-between items-start mb-3"><span class="font-bold text-lg text-gray-800 dark:text-white">DOGE/USDT</span><span class="text-xs font-semibold bg-red-500 text-white px-3 py-1 rounded-full">SL Hit</span></div><div class="grid grid-cols-2 gap-3 text-sm"><div><p class="text-gray-500 dark:text-gray-400">Entri</p><p class="font-semibold text-gray-700 dark:text-gray-200">0.1580</p></div><div class="text-right"><p class="text-gray-500 dark:text-gray-400">Close</p><p class="font-semibold text-red-500">0.1510 (-4.43%)</p></div></div></div>
+    </div>
+</div>

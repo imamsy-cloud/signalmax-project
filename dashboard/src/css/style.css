@@ -1,0 +1,54 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+.sidebar-link.active {
+    background-color: #16a34a; /* primary-600 */
+    color: white;
+}
+.sidebar-link.active i {
+    color: white;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.tab-link {
+    color: #6b7280; border-color: transparent;
+}
+.tab-link:hover {
+    color: #111827; border-color: #d1d5db;
+}
+.dark .tab-link { color: #9ca3af; }
+.dark .tab-link:hover { color: #f9fafb; border-color: #4b5563; }
+.tab-link.active { 
+    border-color: #16a34a; color: #16a34a; font-weight: 600;
+}
+.event-type-field { display: none; }
+
+#content-area .loader {
+    text-align: center; padding: 50px; font-size: 1.2em; color: #9ca3af;
+}
+
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+.aspect-w-9 { position: relative; padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%); }
+.aspect-w-9 > * { position: absolute; height: 100%; width: 100%; top: 0; right: 0; bottom: 0; left: 0; }
+.aspect-h-16 { --tw-aspect-h: 16; }
+
+#course-modal:not(.hidden), #section-modal:not(.hidden) {
+    display: flex;
+}
+
+/* === PERBAIKAN UNTUK TAMPILAN MOBILE === */
+@media (max-width: 768px) {
+    nav[aria-label="Tabs"] {
+        display: flex;
+        overflow-x: auto; /* Memungkinkan scroll horizontal */
+        -ms-overflow-style: none;  /* Sembunyikan scrollbar di IE dan Edge */
+        scrollbar-width: none;  /* Sembunyikan scrollbar di Firefox */
+    }
+    /* Sembunyikan scrollbar di Chrome, Safari, dan Opera */
+    nav[aria-label="Tabs"]::-webkit-scrollbar {
+        display: none;
+    }
+}

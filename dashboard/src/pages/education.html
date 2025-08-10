@@ -1,0 +1,114 @@
+<!-- Tampilan 1: Daftar Kursus (Default) -->
+<div id="course-list-view">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Manajemen Kursus Edukasi</h2>
+            <p class="text-sm text-gray-500">Buat dan atur kurikulum untuk aplikasi Anda.</p>
+        </div>
+        <button id="add-course-btn" class="w-full sm:w-auto bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-primary-700">
+            <i class="fas fa-plus"></i>
+            <span>Buat Kursus Baru</span>
+        </button>
+    </div>
+
+    <div class="mt-6 bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+        <h3 class="font-semibold mb-4">Daftar Kursus</h3>
+        <div class="space-y-4">
+            <!-- Contoh Kartu Kursus 1 -->
+            <div class="p-4 border rounded-lg dark:border-gray-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="flex items-center space-x-4">
+                    <img src="https://placehold.co/400x200/a7f3d0/1f2937?text=Crypto" class="w-24 h-14 object-cover rounded-md bg-gray-200" alt="Course Thumbnail">
+                    <div>
+                        <p class="font-bold text-lg text-gray-800 dark:text-white">Analisa Teknikal Dasar</p>
+                        <div class="flex items-center flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500 dark:text-gray-400 mt-1">
+                            <span><i class="fas fa-book-open mr-1"></i> 3 Pelajaran</span>
+                            <span class="px-2 py-0.5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Gratis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2 self-end sm:self-center">
+                    <button class="edit-course-btn text-blue-500 hover:text-blue-700 p-2" title="Edit Kurikulum"><i class="fas fa-edit"></i></button>
+                    <button class="text-red-500 hover:text-red-700 p-2" title="Hapus Kursus"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tampilan 2: Editor Kurikulum (Disembunyikan) -->
+<div id="course-editor-view" class="hidden">
+    <div class="mb-4">
+        <button id="back-to-list-btn" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-primary-500"><i class="fas fa-arrow-left mr-2"></i>Kembali ke Daftar Kursus</button>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Kolom Kiri: Kurikulum -->
+        <div class="lg:col-span-2 bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-4">Kurikulum: Analisa Teknikal Dasar</h3>
+            <div class="space-y-4">
+                <!-- Contoh Bab -->
+                <div class="bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-semibold"><i class="fas fa-grip-vertical mr-2 cursor-move text-gray-400"></i> Bab 1: Pengenalan</h4>
+                        <button class="text-red-500 text-xs"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                    <div class="pl-6 mt-2 space-y-2 border-l-2 dark:border-gray-600">
+                        <!-- Pelajaran yang sudah ditambahkan -->
+                        <div class="p-2 bg-white dark:bg-gray-800 rounded-md flex items-center justify-between"><span class="flex items-center"><i class="fas fa-grip-vertical mr-2 cursor-move text-gray-400"></i><i class="fas fa-video text-red-500 mr-2"></i> Apa itu Analisa Teknikal?</span><button class="text-gray-400 hover:text-red-500 text-xs"><i class="fas fa-times"></i></button></div>
+                        <div class="p-2 bg-white dark:bg-gray-800 rounded-md flex items-center justify-between"><span class="flex items-center"><i class="fas fa-grip-vertical mr-2 cursor-move text-gray-400"></i><i class="fas fa-newspaper text-blue-500 mr-2"></i> Membaca Candlestick</span><button class="text-gray-400 hover:text-red-500 text-xs"><i class="fas fa-times"></i></button></div>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-4 w-full border-2 border-dashed border-gray-300 dark:border-gray-600 text-gray-500 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50">+ Tambah Bab Baru</button>
+        </div>
+
+        <!-- Kolom Kanan: Perpustakaan Konten -->
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">Perpustakaan Konten</h3>
+            <p class="text-xs text-gray-500 mb-4">Cari dan seret konten ke dalam kurikulum di sebelah kiri.</p>
+            <input type="text" placeholder="Cari artikel, video..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md mb-4">
+            <div class="space-y-2 max-h-96 overflow-y-auto pr-2">
+                <!-- Contoh Konten dari Management Konten -->
+                <div class="p-2 border dark:border-gray-700 rounded-md cursor-grab"><p class="font-semibold text-sm flex items-center"><i class="fas fa-video text-red-500 mr-2"></i> Pengenalan Manajemen Risiko</p><p class="text-xs text-gray-500 ml-6">Tipe: Video</p></div>
+                <div class="p-2 border dark:border-gray-700 rounded-md cursor-grab"><p class="font-semibold text-sm flex items-center"><i class="fas fa-newspaper text-blue-500 mr-2"></i> Psikologi Trading</p><p class="text-xs text-gray-500 ml-6">Tipe: Artikel</p></div>
+                <div class="p-2 border dark:border-gray-700 rounded-md cursor-grab"><p class="font-semibold text-sm flex items-center"><i class="fas fa-book text-green-500 mr-2"></i> E-Book Pola Chart</p><p class="text-xs text-gray-500 ml-6">Tipe: E-Book</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal untuk Membuat Kursus Baru -->
+<div id="course-modal" class="fixed inset-0 bg-black bg-opacity-50 z-40 items-center justify-center p-4">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl">
+        <div class="p-6 border-b dark:border-gray-700 flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Buat Kursus Baru</h3>
+            <button id="close-course-modal-btn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-2xl">&times;</button>
+        </div>
+        <div class="p-6 space-y-4">
+            <div>
+                <label class="text-sm font-medium">Judul Kursus</label>
+                <input type="text" placeholder="Contoh: Pengenalan Cryptocurrency" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+            </div>
+            <div>
+                <label class="text-sm font-medium">Deskripsi Singkat</label>
+                <textarea rows="3" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="text-sm font-medium">Tipe Kursus</label>
+                    <select class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <option value="GRATIS">Gratis</option>
+                        <option value="PREMIUM">Premium</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-sm font-medium">Gambar Thumbnail</label>
+                    <input type="file" class="mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-800/50 flex justify-end space-x-2">
+            <button id="cancel-course-btn" class="px-4 py-2 text-sm rounded-lg text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700">Batal</button>
+            <button class="px-4 py-2 text-sm rounded-lg text-white bg-primary-600 hover:bg-primary-700">Simpan & Lanjut</button>
+        </div>
+    </div>
+</div>

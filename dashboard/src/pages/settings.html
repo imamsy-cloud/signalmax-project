@@ -1,0 +1,92 @@
+<div class="space-y-6">
+    <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-4">
+            <div>
+                <h3 class="font-semibold text-lg">Pengaturan Tampilan Beranda</h3>
+                <p class="text-sm text-gray-500">Seret untuk mengubah urutan, atau tambah bagian baru.</p>
+            </div>
+            <button id="add-section-btn" class="bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-primary-700 transition-colors">
+                <i class="fas fa-plus"></i>
+                <span>Tambah Bagian</span>
+            </button>
+        </div>
+        
+        <div id="homepage-layout-list" class="space-y-3">
+            <div class="p-3 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-between cursor-move">
+                <div class="flex items-center">
+                    <i class="fas fa-grip-vertical mr-4 text-gray-400"></i>
+                    <i class="fas fa-image w-6 text-blue-500"></i>
+                    <div class="ml-3">
+                        <p class="font-semibold">Banner Promosi</p>
+                        <p class="text-xs text-gray-500">Konten: Promo Upgrade Premium (ID: bnr-001)</p>
+                    </div>
+                </div>
+                <div><button class="text-gray-400 hover:text-red-500 p-2"><i class="fas fa-times-circle"></i></button></div>
+            </div>
+            <div class="p-3 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-between cursor-move">
+                <div class="flex items-center">
+                    <i class="fas fa-grip-vertical mr-4 text-gray-400"></i>
+                    <i class="fas fa-signal w-6 text-green-500"></i>
+                    <div class="ml-3">
+                        <p class="font-semibold">Sinyal Premium Terbaru</p>
+                        <p class="text-xs text-gray-500">Konten: Otomatis</p>
+                    </div>
+                </div>
+                <div><button class="text-gray-400 hover:text-red-500 p-2"><i class="fas fa-times-circle"></i></button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-2 text-right">
+        <button class="bg-primary-600 text-white py-2 px-6 rounded-lg hover:bg-primary-700 font-semibold">Simpan Tata Letak</button>
+    </div>
+</div>
+
+<div id="section-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-40 p-4">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+        <div class="p-5 border-b dark:border-gray-700 flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Tambah Bagian Baru ke Beranda</h3>
+            <button id="close-section-modal-btn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-2xl">&times;</button>
+        </div>
+        <div class="p-6 space-y-5 overflow-y-auto">
+            <div>
+                <label for="section-type-select" class="text-sm font-medium text-gray-700 dark:text-gray-300">1. Pilih Tipe Bagian</label>
+                <select id="section-type-select" class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md">
+                    <option value="">-- Pilih Tipe --</option>
+                    <option value="banner">Banner Promosi (Pilih 1)</option>
+                    <option value="signals">Widget Sinyal Terbaru</option>
+                    <option value="education_resume">Widget Lanjutkan Belajar</option>
+                    <option value="community_highlight">Widget Diskusi Komunitas</option>
+                    <option value="article_list">Daftar Artikel (Pilih 1)</option>
+                    <option value="event_highlight">Sorotan Event (Pilih 1)</option>
+                </select>
+            </div>
+            
+            <div id="dynamic-content-selector" class="pt-5 border-t dark:border-gray-600">
+                <label class="text-sm font-medium text-gray-700 dark:text-gray-300">2. Pilih Konten Spesifik (jika perlu)</label>
+                
+                <div id="selector-placeholder" class="text-center text-gray-500 p-8 border-2 border-dashed rounded-lg mt-2">
+                    <i class="fas fa-mouse-pointer text-3xl mb-2"></i>
+                    <p>Pilih tipe bagian di atas untuk melanjutkan.</p>
+                </div>
+                
+                <div id="content-item-selector" class="hidden mt-2 space-y-2">
+                    <input type="text" placeholder="Cari konten berdasarkan judul/ID" class="w-full px-3 py-1.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md">
+                    <div class="max-h-60 overflow-y-auto space-y-2 p-2 border rounded-md">
+                        <div class="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700"><img src="https://placehold.co/600x300/22c55e/ffffff?text=Upgrade+Premium" class="w-20 h-10 object-cover rounded-sm mr-3" alt="Konten"><span class="font-semibold">Promo Upgrade Premium</span></div>
+                        <div class="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700"><span class="font-semibold">Dasar-dasar Candlestick</span></div>
+                    </div>
+                </div>
+
+                <div id="widget-selector" class="hidden text-center text-gray-500 p-8 border-2 border-dashed rounded-lg mt-2">
+                    <i class="fas fa-cogs text-3xl mb-2"></i>
+                    <p>Widget ini akan menampilkan konten terbaru secara otomatis. Tidak perlu konfigurasi lebih lanjut.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-900/50 flex justify-end space-x-3 border-t dark:border-gray-700">
+            <button id="cancel-section-btn" class="px-4 py-2 text-sm font-semibold rounded-lg text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">Batal</button>
+            <button class="px-5 py-2 text-sm font-semibold rounded-lg text-white bg-primary-600 hover:bg-primary-700">Tambahkan</button>
+        </div>
+    </div>
+</div>

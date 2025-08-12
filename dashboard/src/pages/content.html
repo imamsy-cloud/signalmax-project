@@ -1,0 +1,185 @@
+<div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow">
+    <div class="border-b border-gray-200 dark:border-gray-700 mb-4">
+       <nav class="flex space-x-4 -mb-px" aria-label="Tabs">
+           <button class="tab-link active whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-target="tab-banner"><i class="fas fa-image mr-2"></i>Banner</button>
+           <button class="tab-link whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-target="tab-artikel"><i class="fas fa-newspaper mr-2"></i>Artikel/Berita</button>
+           <button class="tab-link whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-target="tab-video"><i class="fas fa-video mr-2"></i>Video</button>
+           <button class="tab-link whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm" data-target="tab-ebook"><i class="fas fa-book mr-2"></i>E-Book</button>
+       </nav>
+   </div>
+
+   <div id="tab-banner" class="tab-content active">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div class="md:col-span-1">
+               <h4 class="font-semibold mb-3">Tambah Banner Baru</h4>
+               <form class="space-y-4 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg">
+                   <div><label class="text-sm font-medium">Judul Banner</label><input type="text" placeholder="Contoh: Promo Upgrade Premium" class="mt-1 w-full px-3 py-2 bg-white dark:bg-gray-700 border rounded-md"></div>
+                   <div><label class="text-sm font-medium">Gambar Banner (Rasio 2:1)</label><input type="file" class="mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"></div>
+                   <div><label class="text-sm font-medium">Link Tujuan (Opsional)</label><input type="url" placeholder="https://... " class="mt-1 w-full px-3 py-2 bg-white dark:bg-gray-700 border rounded-md"></div>
+                   <button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 font-semibold">Simpan Banner</button>
+               </form>
+           </div>
+           <div class="md:col-span-2">
+               <h4 class="font-semibold mb-3">Daftar Banner</h4>
+               <div class="space-y-3">
+                   <div class="flex items-center justify-between p-3 border dark:border-gray-700 rounded-lg" data-id="bnr-001" data-title="Promo Upgrade Premium" data-image="https://placehold.co/600x300/22c55e/ffffff?text=Upgrade+Premium" data-link="">
+                       <div class="flex items-center space-x-4">
+                           <img src="https://placehold.co/600x300/22c55e/ffffff?text=Upgrade+Premium" alt="Banner" class="w-28 h-14 object-cover rounded-md bg-gray-200">
+                           <div>
+                               <p class="font-semibold">Promo Upgrade Premium</p>
+                               <div class="flex items-center mt-1">
+                                   <p class="text-xs text-gray-400 mr-2">ID: <span class="font-mono">bnr-001</span></p>
+                                   <button class="copy-id-btn text-gray-400 hover:text-primary-500" data-id="bnr-001" title="Salin ID"><i class="fas fa-copy fa-xs"></i></button>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="flex items-center">
+                           <button class="edit-content-btn text-blue-500 hover:text-blue-700 p-2" data-type="banner" title="Edit"><i class="fas fa-edit"></i></button>
+                           <button class="text-red-500 hover:text-red-700 p-2" title="Hapus"><i class="fas fa-trash"></i></button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div id="tab-artikel" class="tab-content">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div class="md:col-span-1">
+               <h4 class="font-semibold mb-3">Tambah Artikel Baru</h4>
+               <form class="space-y-4">
+                   <input type="text" placeholder="Judul Artikel..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md">
+                   <textarea rows="8" placeholder="Tulis konten artikel di sini..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md"></textarea>
+                   <div>
+                       <label class="text-sm font-medium">Gambar Sampul (Opsional)</label>
+                       <input type="file" class="mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
+                   </div>
+                   <div>
+                       <label class="text-sm font-medium">Link Video YouTube (Opsional)</label>
+                       <input type="url" placeholder="https://youtube.com/watch?v=..." class="mt-1 w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md">
+                   </div>
+                   <button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg font-semibold">Publikasikan</button>
+               </form>
+           </div>
+           <div class="md:col-span-2">
+               <h4 class="font-semibold mb-3">Daftar Artikel</h4>
+               <div class="overflow-x-auto">
+                   <table class="w-full text-sm text-left">
+                       <thead class="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 uppercase text-xs"><tr><th class="p-3">Judul</th><th class="p-3">ID Konten</th><th class="p-3">Aksi</th></tr></thead>
+                       <tbody>
+                           <tr class="border-b dark:border-gray-700" data-id="artikel-001" data-title="Dasar-dasar Candlestick" data-content="Ini adalah isi dari artikel tentang candlestick..." data-image-url="" data-video-url="https://youtube.com/watch?v=example123">
+                                <td class="p-3 font-medium">Dasar-dasar Candlestick</td>
+                                <td class="p-3"><div class="flex items-center"><span class="font-mono text-gray-500">artikel-001</span><button class="copy-id-btn text-gray-400 hover:text-primary-500 ml-2" data-id="artikel-001" title="Salin ID"><i class="fas fa-copy"></i></button></div></td>
+                                <td class="p-3 space-x-2"><button class="edit-content-btn text-blue-500" data-type="artikel" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500" title="Hapus"><i class="fas fa-trash"></i></button></td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   <div id="tab-video" class="tab-content">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div class="md:col-span-1"><h4 class="font-semibold mb-3">Tambah Video Baru</h4><form class="space-y-4"><input type="text" placeholder="Judul Video..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md"><input type="url" placeholder="URL Video YouTube..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md"><button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg font-semibold">Publikasikan</button></form></div>
+           <div class="md:col-span-2">
+               <h4 class="font-semibold mb-3">Daftar Video</h4>
+               <div class="overflow-x-auto">
+                   <table class="w-full text-sm text-left">
+                       <thead class="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 uppercase text-xs"><tr><th class="p-3">Judul</th><th class="p-3">ID Konten</th><th class="p-3">Aksi</th></tr></thead>
+                       <tbody>
+                           <tr class="border-b dark:border-gray-700" data-id="video-001" data-title="Manajemen Risiko" data-url="https://www.youtube.com/watch?v=example">
+                                <td class="p-3 font-medium">Manajemen Risiko</td>
+                                <td class="p-3"><div class="flex items-center"><span class="font-mono text-gray-500">video-001</span><button class="copy-id-btn text-gray-400 hover:text-primary-500 ml-2" data-id="video-001" title="Salin ID"><i class="fas fa-copy"></i></button></div></td>
+                                <td class="p-3 space-x-2"><button class="edit-content-btn text-blue-500" data-type="video" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500" title="Hapus"><i class="fas fa-trash"></i></button></td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   <div id="tab-ebook" class="tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div class="md:col-span-1"><h4 class="font-semibold mb-3">Tambah E-Book Baru</h4><form class="space-y-4"><input type="text" placeholder="Judul E-Book..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border rounded-md"><input type="file" accept=".pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"><button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg font-semibold">Publikasikan</button></form></div>
+           <div class="md:col-span-2">
+               <h4 class="font-semibold mb-3">Daftar E-Book</h4>
+               <div class="overflow-x-auto">
+                   <table class="w-full text-sm text-left">
+                       <thead class="bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 uppercase text-xs"><tr><th class="p-3">Judul</th><th class="p-3">ID Konten</th><th class="p-3">Aksi</th></tr></thead>
+                       <tbody>
+                           <tr class="border-b dark:border-gray-700" data-id="ebook-001" data-title="Psikologi Trading">
+                                <td class="p-3 font-medium">Psikologi Trading</td>
+                                <td class="p-3"><div class="flex items-center"><span class="font-mono text-gray-500">ebook-001</span><button class="copy-id-btn text-gray-400 hover:text-primary-500 ml-2" data-id="ebook-001" title="Salin ID"><i class="fas fa-copy"></i></button></div></td>
+                                <td class="p-3 space-x-2"><button class="edit-content-btn text-blue-500" data-type="ebook" title="Edit"><i class="fas fa-edit"></i></button><button class="text-red-500" title="Hapus"><i class="fas fa-trash"></i></button></td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+<div id="edit-banner-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-40 p-4">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-lg">
+        <div class="p-5 border-b dark:border-gray-700 flex justify-between items-center"><h3 class="text-xl font-semibold">Edit Banner</h3><button class="close-modal-btn text-gray-400">&times;</button></div>
+        <div class="p-6 space-y-4">
+            <input type="hidden" id="edit-banner-id">
+            <div><label class="text-sm">Judul</label><input type="text" id="edit-banner-title" class="mt-1 w-full p-2 border rounded"></div>
+            <div><label class="text-sm">Link</label><input type="url" id="edit-banner-link" class="mt-1 w-full p-2 border rounded"></div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-700/50 flex justify-end gap-3">
+            <button class="cancel-modal-btn px-4 py-2 text-sm rounded-lg bg-gray-200 hover:bg-gray-300">Batal</button>
+            <button class="save-modal-btn px-4 py-2 text-sm rounded-lg bg-primary-600 text-white hover:bg-primary-700">Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div id="edit-artikel-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-40 p-4">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-lg">
+        <div class="p-5 border-b dark:border-gray-700 flex justify-between items-center"><h3 class="text-xl font-semibold">Edit Artikel</h3><button class="close-modal-btn text-gray-400">&times;</button></div>
+        <div class="p-6 space-y-4">
+            <input type="hidden" id="edit-artikel-id">
+            <div><label class="text-sm">Judul</label><input type="text" id="edit-artikel-title" class="mt-1 w-full p-2 border rounded"></div>
+            <div><label class="text-sm">Konten</label><textarea id="edit-artikel-content" rows="6" class="mt-1 w-full p-2 border rounded"></textarea></div>
+            <div><label class="text-sm">Ganti Gambar Sampul (Opsional)</label><input type="file" id="edit-artikel-image" class="mt-1 w-full text-sm"></div>
+            <div><label class="text-sm">Link Video YouTube (Opsional)</label><input type="url" id="edit-artikel-video" class="mt-1 w-full p-2 border rounded"></div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-700/50 flex justify-end gap-3">
+            <button class="cancel-modal-btn px-4 py-2 text-sm rounded-lg bg-gray-200 hover:bg-gray-300">Batal</button>
+            <button class="save-modal-btn px-4 py-2 text-sm rounded-lg bg-primary-600 text-white hover:bg-primary-700">Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div id="edit-video-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-40 p-4">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-lg">
+        <div class="p-5 border-b dark:border-gray-700 flex justify-between items-center"><h3 class="text-xl font-semibold">Edit Video</h3><button class="close-modal-btn text-gray-400">&times;</button></div>
+        <div class="p-6 space-y-4">
+            <input type="hidden" id="edit-video-id">
+            <div><label class="text-sm">Judul</label><input type="text" id="edit-video-title" class="mt-1 w-full p-2 border rounded"></div>
+            <div><label class="text-sm">URL YouTube</label><input type="url" id="edit-video-url" class="mt-1 w-full p-2 border rounded"></div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-700/50 flex justify-end gap-3">
+            <button class="cancel-modal-btn px-4 py-2 text-sm rounded-lg bg-gray-200 hover:bg-gray-300">Batal</button>
+            <button class="save-modal-btn px-4 py-2 text-sm rounded-lg bg-primary-600 text-white hover:bg-primary-700">Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div id="edit-ebook-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-40 p-4">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-lg">
+        <div class="p-5 border-b dark:border-gray-700 flex justify-between items-center"><h3 class="text-xl font-semibold">Edit E-Book</h3><button class="close-modal-btn text-gray-400">&times;</button></div>
+        <div class="p-6 space-y-4">
+            <input type="hidden" id="edit-ebook-id">
+            <div><label class="text-sm">Judul</label><input type="text" id="edit-ebook-title" class="mt-1 w-full p-2 border rounded"></div>
+            <div><label class="text-sm">Ganti File PDF</label><input type="file" accept=".pdf" class="mt-1 w-full text-sm"></div>
+        </div>
+        <div class="p-4 bg-gray-50 dark:bg-gray-700/50 flex justify-end gap-3">
+            <button class="cancel-modal-btn px-4 py-2 text-sm rounded-lg bg-gray-200 hover:bg-gray-300">Batal</button>
+            <button class="save-modal-btn px-4 py-2 text-sm rounded-lg bg-primary-600 text-white hover:bg-primary-700">Simpan</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<!-- File: app/src/screens/signals.html -->
+<div class="p-4 space-y-4 bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Sinyal Trading</h1>
+    
+    <!-- Placeholder Chart TradingView -->
+    <div class="bg-gray-200 dark:bg-gray-800 h-56 rounded-lg flex items-center justify-center">
+        <p class="text-gray-500">Embedded TradingView Chart</p>
+    </div>
+    
+    <!-- Kartu Winrate -->
+    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md relative">
+        <div class="flex justify-between items-center mb-3">
+            <h3 class="font-semibold text-gray-700 dark:text-gray-200">Total Winrate</h3>
+            <button id="winrate-info-btn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </div>
+        
+        <div class="flex justify-center items-center">
+            <div class="relative w-40 h-40">
+                <!-- Latar Belakang Chart -->
+                <svg class="w-full h-full" viewBox="0 0 100 100">
+                    <circle class="text-gray-200 dark:text-gray-700" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                </svg>
+                <!-- Chart Dua Warna (Profit & Loss) -->
+                <svg class="w-full h-full absolute top-0 left-0" viewBox="0 0 100 100">
+                    <circle id="win-rate-circle" class="text-primary-500 radial-chart-progress" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                    <circle id="lose-rate-circle" class="text-red-500 radial-chart-progress" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                </svg>
+                <!-- Teks di Tengah Chart -->
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+                    <span id="winrate-text" class="text-3xl font-bold text-gray-800 dark:text-white">0%</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">Winrate</span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 flex justify-center space-x-6 text-sm">
+             <div class="text-center">
+                <p class="font-bold text-primary-500" id="profit-percentage">0%</p>
+                <p class="text-xs text-gray-500">Profit</p>
+             </div>
+             <div class="text-center">
+                <p class="font-bold text-red-500" id="lose-percentage">0%</p>
+                <p class="text-xs text-gray-500">Loss</p>
+             </div>
+        </div>
+
+        <!-- Popup Informasi (Tersembunyi) -->
+        <div id="winrate-info-popup" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 p-4">
+            <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-xs p-4 text-center">
+                <p class="text-sm text-gray-700 dark:text-gray-300">Ini adalah Chart yang menunjukkan signal Profit dan Loss secara otomatis, dalam 30 hari terakhir.</p>
+                <button id="close-winrate-popup-btn" class="mt-4 bg-primary-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full">Mengerti</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Sinyal -->
+    <div class="flex bg-gray-200 dark:bg-gray-700 rounded-full p-1">
+        <button id="tab-berjalan" class="signal-tab w-1/2 p-2 rounded-full text-sm font-medium transition active">Berjalan</button>
+        <button id="tab-riwayat" class="signal-tab w-1/2 p-2 rounded-full text-sm font-medium transition">Riwayat</button>
+    </div>
+    
+    <!-- Daftar Sinyal (Akan diisi oleh JavaScript) -->
+    <div id="list-berjalan" class="space-y-3"></div>
+    <div id="list-riwayat" class="space-y-3 hidden"></div>
+</div>
